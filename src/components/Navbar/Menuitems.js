@@ -8,13 +8,13 @@ export const MenuItems =[
         cName:'nav-links'    
     },
     {
-        title:'Services',
-        url: 'services',
+        title:'Advantages',
+        url: 'advantages',
         cName:'nav-links'    
     },
     {
-        title:'Products',
-        url: 'products',
+        title:'Dealernetwork',
+        url: 'dealernetwork',
         cName:'nav-links'    
     },
     {

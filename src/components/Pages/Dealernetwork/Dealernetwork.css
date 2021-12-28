@@ -1,0 +1,21 @@
+.Dealer-container{
+    background-color: transparent;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.Main-container{
+    background-color: transparent;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+

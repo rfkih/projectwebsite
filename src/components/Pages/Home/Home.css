@@ -1,0 +1,31 @@
+ody{
+    width: 100%;
+    background: #fff
+}
+
+.Main-container{
+    
+    background-color: transparent;
+    padding: 20px;
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+
+.secondary-container{
+    width: 50%;
+    margin-top: 8em;
+}
+
+.Main-picture{
+    background-color: transparent;
+}
+
+.card-container{
+    background-color: aqua;
+    width: 100%;
+}
+
