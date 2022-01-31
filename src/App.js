@@ -8,6 +8,7 @@ import Advantages from './components/Pages/Advantages/Advantages';
 import Dealernetwork from './components/Pages/Dealernetwork/Dealernetwork';
 import Contact from './components/Pages/Contact/Contact';
 import Signup from './components/Pages/Signup/Signup';
+import Login from './components/Pages/Login/Login';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
           <Route path='dealernetwork' element={<Dealernetwork/>}/>
           <Route path='contact' element={<Contact/>}/>
           <Route path='signup' element={<Signup/>}/>
+          <Route path='login' element={<Login/>}/>
         </Routes>
       </Router>
       
