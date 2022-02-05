@@ -1,0 +1,26 @@
+{
+    "users": [
+        {
+          "fullName": "Rifki",
+          "username": "rfkih",
+          "email": "email@yahoo.com",
+          "password": "incorrect",
+          "role": "user",
+          "id": 87
+        },
+        {
+          "params": {
+            "username": "rfkih",
+            "password": "incorrect"
+          },
+          "id": 88
+        },
+        {
+          "params": {
+            "username": "rfkih",
+            "password": "incorrect"
+          },
+          "id": 89
+        }
+      ]
+}

@@ -1,34 +1,37 @@
 import React,{ useState} from 'react'
-import {Link, } from 'react-router-dom'
+import {Link, Navigate } from 'react-router-dom'
 import axios from '../../../utils/axios'
+import {useDispatch, useSelector} from "react-redux"
+import {loginAction} from '../../../store/actions'
 
 function Login() {
-
+  const dispatch = useDispatch()
+  const username = useSelector ((state) => state.auth.username)
   const [formState, setFormState] = useState({
     username: "",
     password: "",
   });
 
-  const {username, password} = formState
+  if(username){
+    return  <Navigate to ="/" replace />
+  }
+  
 
   const handleChange = (e) => {
     setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
-  const onLoginClick = async () => {
-    try {
-      const user = {
-        username,
-        password,
-      };
-      await axios.post("users/login", user);
-      setFormState(formState);
-      alert("Login Berhasil")
-      
-    } catch (error) {
-      alert("Login Gagal")
-    }
-  }
+  const onLoginClick =() =>{
+    axios.get("/users",{
+        params:{username: formState.username, password: formState.password}
+    })
+    .then(res => {
+        const {id, username, role} =res.data[0]
+        loginAction({dispatch, id, username, role})
+    })
+    .catch((err) => console.log({err}))
+}
+
 
 
 
@@ -53,7 +56,6 @@ function Login() {
                   type="text"
                   className="form-control my-2"
                   onChange={handleChange}
-                  value={username}
                 />
                 <input
                   name="password"
@@ -61,7 +63,6 @@ function Login() {
                   type="password"
                   className="form-control my-2"
                   onChange={handleChange}
-                  value={password}
                 />
                 <div className="d-flex flex-row justify-content-between align-items-center">
                   <Link to="/signup">Or Sign-Up</Link>
