@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Navbar from './components/Navbar/Navbar';
+import Navigationbar from './components/Navbar/contoh';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {useEffect, useState} from "react";
 import { useDispatch } from 'react-redux'
@@ -36,7 +36,7 @@ function App() {
     return (
       <div className="App">
         <Router>
-          <Navbar/>
+          <Navigationbar/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="advantages" element={<Advantages />}/>

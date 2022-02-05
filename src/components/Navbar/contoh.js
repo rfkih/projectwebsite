@@ -2,8 +2,26 @@ import React, {Component} from "react";
 import {MenuItems} from './Menuitems'
 import './Navbar.css'
 import { Button } from "../Button";
+import {
+    Navbar,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    NavLink,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+  } from "reactstrap";
+import { useSelector, useDispatch} from 'react-redux' 
 
-class Navbar extends Component {
+
+
+class Navigationbar extends Component {
+
+    
+   
+   
     
     state = { clicked: false}
 
@@ -12,6 +30,8 @@ class Navbar extends Component {
     }
 
     render () {
+        
+    
         return(
             <nav className="NavbarItems">
                 <h1 className="navbar-logo">Cyclist<i className="fab fa-affiliatetheme"></i></h1>
@@ -36,4 +56,4 @@ class Navbar extends Component {
 }
 
 
-export default Navbar
+export default Navigationbar

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {useState} from "react";
 import { Link, Redirect } from 'react-router-dom'
 import {MenuItems} from './Menuitems'
 import './Navbar.css'
@@ -22,16 +22,20 @@ import {
         return state.auth;
       });
 
+    
+
+     
+
     return (
-        <div>
-        <Navbar color="light" light expand="md">
-            <NavbarBrand href="/">EMMERCE</NavbarBrand>
+    <div>
+        <Navbar className="NavbarItems"  light expand="md">
+        <h1 className="navbar-logo" href="/">Cyclist<i className="fab fa-affiliatetheme"></i></h1>
             <Nav className="me-auto" navbar>
-    {username ? (
-      <UncontrolledDropdown inNavbar nav>
-        <DropdownToggle caret nav>
-          HELLO {username}
-        </DropdownToggle>
+      {username ? (
+        <UncontrolledDropdown inNavbar nav>
+            <DropdownToggle caret nav>
+              HELLO {username}
+            </DropdownToggle>
         <DropdownMenu end>
           <DropdownItem tag={Link} to="/cart">
             Cart
@@ -49,24 +53,24 @@ import {
         </DropdownMenu>
       </UncontrolledDropdown>
     ) : (
-      <>
-        <NavItem>
-          <NavLink tag={Link} to="/login">
-            Login
-          </NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink tag={Link} to="/register">
-            Register
-          </NavLink>
-        </NavItem>
-      </>
-    )}
-  </Nav>   
+          <>
+            <NavItem>
+               <NavLink tag={Link} to="/login">
+                Login
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink tag={Link} to="/register">
+                Register
+            </NavLink>
+            </NavItem>
+          </>
+        )}
+      </Nav>   
+     
 
-
-        </Navbar>
-    </div>
+    </Navbar>
+  </div>
     )
   }
 
