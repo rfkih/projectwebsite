@@ -54,20 +54,21 @@ import {
       </UncontrolledDropdown>
     ) : (
           <>
-            <NavItem>
-               <NavLink tag={Link} to="/login">
-                Login
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink tag={Link} to="/register">
-                Register
-            </NavLink>
-            </NavItem>
+            <Button ><a className="sign" href="signup">Sign Up</a></Button>
           </>
         )}
       </Nav>   
-     
+      <ul className={'nav-menu'}>
+                    {MenuItems.map((item, index)=>{
+                        return(
+                        <li key={index}>
+                            <a className={item.cName} href={item.url}>
+                            {item.title}
+                            </a>
+                        </li>
+                        )
+                    })} 
+                </ul>
 
     </Navbar>
   </div>

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import Navigationbar from './components/Navbar/contoh';
+import Navigationbar from './components/Navbar/index';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {useEffect, useState} from "react";
 import { useDispatch } from 'react-redux'
