@@ -11,6 +11,7 @@ import Dealernetwork from './components/Pages/Dealernetwork/Dealernetwork';
 import Contact from './components/Pages/Contact/Contact';
 import Signup from './components/Pages/Signup/Signup';
 import Login from './components/Pages/Login/Login';
+import Latihan from './components/Pages/Latihan/Latihan';
 import { keepLoginAction} from "./store/actions"
 
 
@@ -44,6 +45,7 @@ function App() {
             <Route path='contact' element={<Contact/>}/>
             <Route path='signup' element={<Signup/>}/>
             <Route path='login' element={<Login/>}/>
+            <Route path='latihan' element={<Latihan/>}/>
           </Routes>
         </Router>
         
