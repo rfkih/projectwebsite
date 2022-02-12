@@ -92,6 +92,7 @@ function Signup() {
                   >
                     Register
                   </button>
+                  
                   <Link to="/login">Or login</Link>
                 </div>
               </div>

@@ -5,24 +5,25 @@ import './Navbar.css'
 import { Button } from "../Button";
 import {
     Navbar,
-    NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
     DropdownItem,
   } from "reactstrap";
   import { useSelector, useDispatch} from 'react-redux' 
+  import { logoutAction } from '../../store/actions'
 
   function Navigationbar () {
 
+    const dispatch = useDispatch()
     const { username, role } = useSelector((state) => {
         return state.auth;
       });
 
-    
+      const onLogoutClick = () => {
+        logoutAction(dispatch)
+    };
 
      
 
@@ -49,7 +50,7 @@ import {
             </DropdownItem>
           )}
           <DropdownItem divider />
-          <DropdownItem >Logout</DropdownItem>
+          <DropdownItem onClick={onLogoutClick} >Logout</DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>
     ) : (
