@@ -1,28 +1,51 @@
 
-export const loginAction = ({dispatch, id, username, role}) => {
+import axios from "../../utils/axios";
 
-    localStorage.setItem("userData", JSON.stringify({id, username, role}));
+export const loginAction = (loginData) => {
 
-    dispatch({
-        type: "LOGIN_SUCCESS",
-        payload: {id, username, role},
-    })
+  return async (dispatch) => {
+    try {
+      const res = await axios.get("/users",{
+        params:{username: loginData.username, password: loginData.password}})
+
+        if (res.data.length) {
+          const {id, username, role} = res.data[0]
+
+          localStorage.setItem(
+            "userData",
+            JSON.stringify({ id, username, role })
+          );
+
+          dispatch({
+            type: "LOGIN_SUCCESS",
+            payload: { id, username, role}
+          });
+        } else {
+          alert("Username or Password is incorrect")
+        }
+
+        
+     
+    } catch (error) {
+      console.log({error});
+    }
+  }
+
     
 
 };
 
-export const keepLoginAction = ({ dispatch, id, username, role}) => {
-    
-  dispatch({
+export const keepLoginAction = ({ id, username, role}) => { 
+  return {
     type: "LOGIN_SUCCESS",
     payload: {id, username, role},
-  })
+  }
 
   };
 
 export const logoutAction = (dispatch) => {
   localStorage.removeItem("userData")
-  dispatch({
+  return{
     type: "LOGOUT_SUCCESS"
-  })
+  }
   };

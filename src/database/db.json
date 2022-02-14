@@ -35,9 +35,13 @@
       "email": "noob@mail.com",
       "password": "password",
       "id": 91
+    },
+    {
+      "username": "normandy",
+      "name": "germany",
+      "email": "hitler@yahoo.com",
+      "password": "incorrect",
+      "id": 92
     }
-    
-    
-    
   ]
 }

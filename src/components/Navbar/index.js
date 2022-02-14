@@ -22,7 +22,7 @@ import {
       });
 
       const onLogoutClick = () => {
-        logoutAction(dispatch)
+        dispatch(logoutAction())
     };
 
      

@@ -23,21 +23,16 @@ function Login() {
   const onInputPress= (e) => {
     if(e.code === "Enter") onLogin()
   }
+
+  const  onLogin = async () =>{
+    const action = loginAction(formState)
+    dispatch(action)
+  }
   const onLoginClick= () => {
     onLogin()
   }
 
-  const  onLogin = async () =>{
-    try {
-      const res = await axios.get("/users",{
-        params:{username: formState.username, password: formState.password}
-      })
-      const {id, username, role} =res.data[0]
-        loginAction({dispatch, id, username, role})
-    } catch (error) {
-      console.log({error})
-    }
-}
+  
 
 
 

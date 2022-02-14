@@ -21,11 +21,11 @@ function App() {
   useEffect(() =>{
     const userLocalStorage = localStorage.getItem("userData");
     if(userLocalStorage){
-        const userData = JSON.parse(userLocalStorage)
+        const userData = JSON.parse(userLocalStorage);
 
-        const {id, username, role} = userData
+        const {id, username, role} = userData;
     
-        keepLoginAction({dispatch, id, username, role})
+        dispatch(keepLoginAction({ id, username, role}))
     }
 
     setIsLocalStorageChecked(true);
