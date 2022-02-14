@@ -27,15 +27,16 @@ function Login() {
     onLogin()
   }
 
-  const onLogin =() =>{
-    axios.get("/users",{
+  const  onLogin = async () =>{
+    try {
+      const res = await axios.get("/users",{
         params:{username: formState.username, password: formState.password}
-    })
-    .then(res => {
-        const {id, username, role} =res.data[0]
+      })
+      const {id, username, role} =res.data[0]
         loginAction({dispatch, id, username, role})
-    })
-    .catch((err) => console.log({err}))
+    } catch (error) {
+      console.log({error})
+    }
 }
 
 
@@ -76,15 +77,8 @@ function Login() {
                   <Link to="/signup">Or Sign-Up</Link>
                   <button 
                     className="btn btn-primary mt-2"
-                    onClick={ onLoginClick }
-                  >
+                    onClick={ onLoginClick }>
                     Login
-                  </button>
-                  <button 
-                    className="btn btn-primary mt-2"
-                    onClick={event =>onLoginClick(event) }
-                  >
-                    Login 2
                   </button>
                 </div>
               </div>
